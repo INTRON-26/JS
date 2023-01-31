@@ -15,3 +15,29 @@ Now all instances of Bird have the numLegs property.
 console.log(duck.numLegs);
 console.log(canary.numLegs);
 ```
+
+## differentiating between prototype properties and own properties
+
+```
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+
+let ownProps = [];
+let prototypeProps = [];
+
+for(let a in beagle) {
+  if(beagle.hasOwnProperty(a)) {
+    ownProps.push(a)
+  } else {
+    prototypeProps.push(a)
+  }
+}
+
+// Only change code below this line
+```
